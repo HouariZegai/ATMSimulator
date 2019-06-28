@@ -1,12 +1,12 @@
 
-package com.houarizegai.ATMSimulator;
+package com.houarizegai.atm.java;
 
 import java.util.concurrent.Semaphore;
 import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.scene.image.ImageView;
 import javafx.util.Duration;
-import static com.houarizegai.ATMSimulator.Main.*;
+import static com.houarizegai.atm.java.App.*;
 
 public class Person extends Thread {
       
@@ -45,8 +45,8 @@ public class Person extends Thread {
         try {
             mutex.acquire(); // P(mutex) de Semaphore
             
-            for(int i = 0; i < manName.length; i++)
-                if (this.getName().equals(manName[i])) {
+            for(int i = 0; i < Constants.MEN_NAME.length; i++)
+                if (this.getName().equals(Constants.MEN_NAME[i])) {
                     fadeTransition(manImage[i]);
                     break;
                 }
@@ -60,8 +60,8 @@ public class Person extends Thread {
     public void usingMachine() {
         try {
             sleep(3000);
-            for(int i = 0; i < manName.length; i++)
-                if (this.getName().equals(manName[i])) {
+            for(int i = 0; i < Constants.MEN_NAME.length; i++)
+                if (this.getName().equals(Constants.MEN_NAME[i])) {
                     translateTransition(210 + (4 - i) * 90, 125, manImage[i]);
                 }
             
@@ -77,8 +77,8 @@ public class Person extends Thread {
         try {
             mutex.acquire();
             
-            for(int i = 0; i < manName.length; i++)
-                if (this.getName().equals(manName[i])) {
+            for(int i = 0; i < Constants.MEN_NAME.length; i++)
+                if (this.getName().equals(Constants.MEN_NAME[i])) {
                     translateTransition(0, 360, manImage[i]);
                     break;
                 }
