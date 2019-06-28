@@ -56,7 +56,7 @@ public class Main extends Application {
         btnStart.setLayoutX(650);
         btnStart.setLayoutY(30);
         
-        imageAtm = new ImageView("com/houarizegai/images/atm.jpg");
+        imageAtm = new ImageView("com/houarizegai/resources/images/atm.jpg");
         imageAtm.setLayoutX(650);
         imageAtm.setLayoutY(100);
         imageAtm.setFitWidth(110); // Change the Width of the Image
@@ -75,7 +75,7 @@ public class Main extends Application {
         manImage = new ImageView[manName.length];
         
         for (int i = 0; i < manImage.length; i++) {
-            manImage[i] = new ImageView("com/houarizegai/images/" + manName[i] + ".png");
+            manImage[i] = new ImageView("com/houarizegai/resources/images/" + manName[i] + ".png");
             manImage[i].setLayoutX(10 + 90 * i);
             manImage[i].setLayoutY(55);
             manImage[i].setFitWidth(60);
